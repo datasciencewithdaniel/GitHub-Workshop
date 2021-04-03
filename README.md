@@ -92,15 +92,55 @@ $ git pull origin main
 - VS Code colour changes files depending on Git and Git extensions in the marketplace can make it easy to see where changes have been made and by who.
 - Running ```git log``` will allow you to look back through the commits on your branch.
 # 6.0 Virtual Environments
+There are multiple ways to have a Python virtual environment, one of the best is through the use of Conda which we will explore, however you can use packages that come with Python such as ```virtualenv```, which has a guide [here](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
+
+Virtual environments allow all of your Python packages to be installed in an isolated place, allowing you to have specific control over which packages and which versions your code is accessing, and running multiple environments allows for different versions of the same package to be on your system for different uses.
 ## 6.1 Conda
-
+Conda is a package manager that forms part of the Anaconda distribution (which you may already have), otherwise it can be downloaded from [here](https://docs.conda.io/en/latest/miniconda.html) as miniconda. You can verify your Conda installation the same as we did for Git.
+```
+$ conda --version
+```
+Conda can show you all of your virtual environments easily as it creates and stores them in a centralised location (which is different to ```virtualenv```).
+```
+$ conda info --envs
+```
 ## 6.2 Creating an Envionment
-
+With Conda ready to go, all we have to do is create our virtual environment. You can simply create it, or specify some of the settings such as which Python version you want to use inside. All creations will promote you with a [y/n] to proceed.
+```
+$ conda create --name <my-env>
+$ conda create -n <my-env> python=3.9
+```
 ## 6.3 Activating an Environment
-
+Once you have an environment created, you can simply acitvate it from anywhere on your system. If you activate it and are using VS Code, you can see your current envionment on the bottom-left corner alongside your current Git branch.
 ```
 $ conda activate <my-env>
 ```
+Once an environment is activated you can use Conda (or Pip) to install the packages you would like, and you can specify a version if what you want is not the latest.
+```
+$ conda install -n <my-env> scipy
+$ conda install -n <my-env> scipy=0.15.0
+```
+If this does not work, either use a different Conda [channel](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/channels.html), or use Pip.
 ## 6.4 Deactivating an Environment
+Conda envrionments can be easily deactivated once you are finished using it.
+```
+$ conda deactivate
+```
+## 6.5 Conda Tips
+Often you want to see what is in your Conda environment, and the following lists all of the packages curently installed.
+```
+$ conda list
+```
+If you want to ensure that you (or another teammate) is working off the same environment, you can build a environment.yml file that contains details of your current packages.
+```
+$ conda env export > environment.yml
+```
+This can be then used when creating a new Conda environment.
+```
+$ conda env create -f environment.yml --name <my-env>
+```
+You can also remote environments you no longer require.
+```
+$ conda remove --name <my-env> --all
 
-
+```
