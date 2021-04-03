@@ -143,3 +143,7 @@ You can also remote environments you no longer require.
 ```
 $ conda remove --name <my-env> --all
 ```
+# 7.0 Other Tips
+- Pre-commit is a Python package that you can use to run checks before your commit is processed. This can ensure consistent formatting and style. Check out a simple style/formatting pre-commit [here](https://github.com/datasciencewithdaniel/GitHub-Workshop/blob/main/.pre-commit-config.yaml)
+- .gitignore is a file that specifies files that you don't want Git to track at all, often this includes system generated or user-specific files that are generated. Check out an example file [here](https://github.com/datasciencewithdaniel/GitHub-Workshop/blob/main/.gitignore)
+- Ensure that your Repository has a README file (which this file is) that explains what is going on in your Repo and points people to any files they should be aware of.
