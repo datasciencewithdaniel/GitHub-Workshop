@@ -142,5 +142,4 @@ $ conda env create -f environment.yml --name <my-env>
 You can also remote environments you no longer require.
 ```
 $ conda remove --name <my-env> --all
-
 ```
