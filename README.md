@@ -30,12 +30,6 @@ $ git fetch
 $ git pull origin <my-branch>
 ```
 Ensure that you are on the branch you want to pull the remote changes into before running the ```pull``` command as they go into your current branch.
-## 2.3 Deleting Branches
-Once you have completed a feature you often want to remove the branch to only have branches that are being actively developed. The first command removes a local branch and the second removes a remote branch. Be careful here to not remove the remote ```main``` branch!
-```
-$ git branch -d <my-branch>
-$ git push origin --delete <my-branch>
-```
 # 3.0 Making Changes
 ## 3.1 Creating a New Branch
 Now that we know how to manage branches, we have to see how to actually create them. This command is a combination of two other commands that first creates a new branch and then performs a ```checkout``` - which means you switch to being on the new branch.
@@ -88,9 +82,16 @@ $ git fetch
 $ git checkout main
 $ git pull origin main
 ```
+## 4.4 Deleting Branches
+Once you have completed a feature you often want to remove the branch to only have branches that are being actively developed. The first command removes a local branch and the second removes a remote branch. Be careful here to not remove the remote ```main``` branch!
+```
+$ git branch -d <my-branch>
+$ git push origin --delete <my-branch>
+```
 # 5.0 Git Tips
 - VS Code colour changes files depending on Git and Git extensions in the marketplace can make it easy to see where changes have been made and by who.
 - Running ```git log``` will allow you to look back through the commits on your branch.
+- A good Git guide can be found [here](https://nvie.com/posts/a-successful-git-branching-model/)
 # 6.0 Virtual Environments
 There are multiple ways to have a Python virtual environment, one of the best is through the use of Conda which we will explore, however you can use packages that come with Python such as ```virtualenv```, which has a guide [here](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
@@ -111,7 +112,7 @@ $ conda create --name <my-env>
 $ conda create -n <my-env> python=3.9
 ```
 ## 6.3 Activating an Environment
-Once you have an environment created, you can simply acitvate it from anywhere on your system. If you activate it and are using VS Code, you can see your current envionment on the bottom-left corner alongside your current Git branch.
+Once you have an environment created, you can simply acitvate it from anywhere on your system. Once you activate it, you can see your current environment in the terminal.
 ```
 $ conda activate <my-env>
 ```
