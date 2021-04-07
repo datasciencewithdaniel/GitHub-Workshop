@@ -1,5 +1,5 @@
 # GitHub Workshop
-
+The recoding for the live session is available [here](https://datasciencewithdaniel.com.au/videos/DSWD-GitHub-Workshop-Recording.mp4).
 # 1.0 Set-Up
 ## 1.1 Create GitHub Repository
 Create an account on GitHub and create a new Repository under your account (or whoever you want to own the account).
