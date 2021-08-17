@@ -92,6 +92,38 @@ $ git push origin --delete <my-branch>
 - VS Code colour changes files depending on Git and Git extensions in the marketplace can make it easy to see where changes have been made and by who.
 - Running ```git log``` will allow you to look back through the commits on your branch.
 - A good Git guide can be found [here](https://nvie.com/posts/a-successful-git-branching-model/)
+
+## An Example Git Process
+Get the latest copy of the repo from GitHub
+```
+git fetch
+```
+Update the ```main``` branch on your local machine
+```
+git checkout main
+git pull origin main
+```
+Update your local development branch with the latest work
+```
+git checkout <my-branch>
+git merge main
+```
+The steps above here are good to run on a regular basis/before making changes to make sure you are working on the latest version of the code.
+
+On your local development branch, make changes and write code, then state the changes, you can use ```git status``` to check where your changes are in the Git process.
+```
+git add .
+```
+Commit the staged changed
+```
+git commit -m "<my-commit-message>
+```
+Push the changes from your local machine to GitHub
+```
+git push origin <my-branch>
+```
+Go to GitHub and raise a Pull Request from your development branch to ```main```. Once this has been reviewed and approved by someone else, then start from the top again.
+
 # 6.0 Virtual Environments
 There are multiple ways to have a Python virtual environment, one of the best is through the use of Conda which we will explore, however you can use packages that come with Python such as ```virtualenv```, which has a guide [here](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
